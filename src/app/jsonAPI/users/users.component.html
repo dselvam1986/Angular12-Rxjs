@@ -1,0 +1,86 @@
+<div class="usersWindow">
+    <!-- <div class="internalNavi">
+        <button (click)="getUsers()"> Get All Users </button>
+        <button (click)="getUser()"> Get User </button>
+        <button (click)="onCreateUser()"> Create User </button>
+
+    </div> -->
+    <!-- <div class="center">
+        <form>
+            <div class="col searchFilter">
+                <label for="table-filter-search">Full text search:</label>
+                <input id="table-filter-search" class="form-control" type="text" [formControl]="filter" />
+            </div>
+        </form>
+    </div> -->
+    <div class="content">
+
+        <ng-container *ngIf="!userEditing">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Website</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Edit</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let obj of usersObj ; let number = index">
+                    <tr (click)="getUserDetails(obj)">
+                        <th scope="row">#{{ number + 1 }}</th>
+                        <td>{{ obj.name }}</td>
+                        <td>{{ obj.email }}</td>
+                        <td>{{ obj.username }}</td>
+                        <td>{{ obj.phone }}</td>
+                        <td>{{ obj.website }}</td>
+                        <td>{{ obj.isAdmin }}</td>
+                        <td [ngClass]="'clickable'" (click)="$event.stopPropagation();openEdit(obj)"> <img width="10"
+                                alt="wrench" src="assets/wrench-adjustable.svg" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+
+        <ng-container *ngIf="userEditing">
+            <form [formGroup]="myForm">
+                Value: {{ myForm.value| json}}
+                <hr>
+                Form Status: {{ myForm.status| json}}
+
+                <div class="mb-3">
+                    <label for="myform-name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="myform-name" formControlName="name">
+                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                </div>
+                <div class="mb-3">
+                    <label for="myform-email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="myform-email" formControlName="email">
+                </div>
+                <div class="mb-3">
+                    <label for="myform-username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="myform-username" formControlName="username">
+                </div>
+                <div class="mb-3">
+                    <label for="myform-phone" class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="myform-phone" formControlName="phone">
+                </div>
+                <div class="mb-3">
+                    <label for="myform-website" class="form-label">Website</label>
+                    <input type="text" class="form-control" id="myform-website" formControlName="website">
+                </div>
+                <div class="mb-3 text-center">
+                    <button type="reset" class="btn btn-secondary" (click)="closeEdit()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" (ngSubmit)="saveUserEdit()">Submit</button>
+                </div>
+
+            </form>
+
+        </ng-container>
+
+
+    </div>
+</div>

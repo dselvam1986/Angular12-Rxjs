@@ -1,0 +1,24 @@
+<div class="usersWindow">
+    <div class="internalNavi">
+        <a class="card" *ngIf="usersObj.length > 0">
+            <p>Name: {{usersObj[0].name}}</p>
+            <p>Phone: {{usersObj[0].phone}}</p>
+            <p>UserName: {{usersObj[0].username}}</p>
+        </a>
+
+    </div>
+    <div class="content">
+        <div class="card-container">
+            <ng-container *ngFor="let obj of albumsObj">
+                <a class="card" (click)="openAlbums(obj.id)">
+
+                    <p>Id: {{obj.id}}</p>
+                    <p>Title: {{obj.title}}</p>
+                </a>
+            </ng-container>
+        </div>
+
+    </div>
+
+
+</div>

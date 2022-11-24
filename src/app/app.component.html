@@ -1,0 +1,61 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+    <img width="40" alt="Angular Logo" src="assets/angular.svg" />
+    <span>Welcome to Ang12 Review</span>
+
+    <div class="spacer"></div>
+    <div class="navigation">
+        <a class="links" routerLink="help" routerLinkActive="active">
+            <img width="20" alt="Get Help" src="assets/help.png" />
+            Get Help
+        </a>
+    </div>
+
+
+</div>
+
+<div class="content" role="main">
+
+    <!-- Highlight Card -->
+    <div *hideAfter="3000 as time; then placeholder; let countDown = counter" class="card highlight-card card-small">
+        <img width="40" alt="Angular Logo" src="assets/angular.svg" />
+        <!-- <span>{{ title }} is running!</span> -->
+        <span> {{time}} sec. Disappers in - {{countDown}}</span>
+    </div>
+
+    <ng-template #placeholder let-hiddenAfter="hideAfter">
+        <div setBackground class="card highlight-card card-small">
+            <span>PlaceHolder in View after {{hiddenAfter}} sec</span>
+        </div>
+    </ng-template>
+
+    <!-- Resources -->
+    <h2>Rxjs related</h2>
+    <p> Observables, Promises, Subject:</p>
+
+    <!-- <div class="usersWindow" routerLink="/" routerLinkActive="active">
+        <div class="card-container">
+
+            <ng-container *ngFor="let obj of usersObj">
+                <a class="card" (click)="getUserDetails(obj)">
+
+                    <p>Id: {{obj.id}}</p>
+                    <p>Name: {{obj.name}}</p>
+                    <p>Phone: {{obj.phone}}</p>
+                    <p>UserName: {{obj.username}}</p>
+                </a>
+
+
+            </ng-container>
+
+        </div>
+    </div> -->
+    <app-global-container modalId="globalContainer"></app-global-container>
+    <router-outlet></router-outlet>
+
+    <!-- Footer -->
+    <footer>
+    </footer>
+
+
+</div>

@@ -1,0 +1,59 @@
+/*Global Search Popup*/
+.globalContainerPopup {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 5;
+
+  .modal-dialog,
+  .globalContainerpopup {
+    max-width: none;
+    width: 97%;
+    height: 95%;
+    background-color: #f0f0f0;
+    margin: 20px 0px 0px 20px;
+    overflow: auto;
+  }
+  button.close {
+    // position: absolute;
+    right: 0.7%;
+    top: 19%;
+  }
+
+  .globalContainerPopuppopup::-webkit-scrollbar {
+    width: 5px;
+  }
+  .globalContainerPopuppopup::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  .globalContainerPopuppopup::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  .globalContainerPopuppopup::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+.modalPopContainer::-webkit-scrollbar {
+  width: 5px;
+}
+
+.modalPopContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.modalPopContainer::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.modalPopContainer::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

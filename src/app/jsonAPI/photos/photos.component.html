@@ -1,0 +1,26 @@
+<div class="usersWindow">
+    <div class="internalNavi">
+        <button> Get Photos </button>
+        <!-- <button (click)="getUser()"> Get User </button>
+        <button (click)="onCreateUser()"> Create User </button> -->
+
+    </div>
+    <div class="content">
+        <div class="card-container">
+
+            <ng-container *ngFor="let obj of photosObj">
+                <a class="card">
+
+                    <!-- <p>Id: {{obj.id}}</p>
+                    <p>Title: {{obj.title}}</p>
+                    <p>URL: {{obj.phone}}</p> -->
+                </a>
+
+
+            </ng-container>
+
+        </div>
+
+
+    </div>
+</div>
