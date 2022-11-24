@@ -1,6 +1,7 @@
 # Angular12-Rxjs
 
-This is demo of Angular12 consuming api from jsonapi.com using rxjs library
+This is demo of Angular12 consuming api from jsonapi.com using rxjs library.
+Also has a Global Popup Modal - which allows other modules to be viewed within the modal.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
 
